@@ -2,5 +2,8 @@
 {
     public enum WheelDriwe
     {
+        FrontWheelDrive,
+        RearWheelDrive,
+        AllWheelDrive
     }
 }

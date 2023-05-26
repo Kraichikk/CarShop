@@ -2,6 +2,9 @@
 {
     public enum InteriorOfCar
     {
-        
+        Leather,
+        Cloth,
+        SyntheticLeather,    
+        Alcantara
     }
 }

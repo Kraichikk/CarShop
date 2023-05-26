@@ -1,4 +1,6 @@
-﻿\namespace CarShop.Models
+﻿using CarShop.Models.Enums;
+
+namespace CarShop.Models
 {
     public class ModelOfCar
     {
@@ -8,8 +10,8 @@
 
         public string Img { get; set; }
 
-        public string Color { get; set; } // need create color enum
+        public Color Color { get; set; } // need create color enum     
 
-        public string ComfortLevel { get; set; } //enum
+        public BodyType BodyType { get; set; } // enum
     }
 }

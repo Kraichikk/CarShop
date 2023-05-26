@@ -1,4 +1,6 @@
-﻿namespace CarShop.Models
+﻿using CarShop.Models.Enums;
+
+namespace CarShop.Models
 {
     public class Car
     {
@@ -10,15 +12,15 @@
 
         public int Odometer { get; set; }
 
-        public string Transmission { get; set; } //enum
+        public Transmission Transmission { get; set; } //enum
 
-        public string EngineType { get; set; } //enum
+        public EngineType EngineType { get; set; } //enum
 
-        public string Condition { get; set; } //enum
+        public Condition Condition { get; set; } //enum
 
-        public string InteriorOfCar { get; set; } //enum
+        public InteriorOfCar InteriorOfCar { get; set; } //enum
 
-        public string WheelDriwe { get; set; } //enum
+        public WheelDriwe WheelDriwe { get; set; } //enum
 
         private int year;
         public DateTime Year
