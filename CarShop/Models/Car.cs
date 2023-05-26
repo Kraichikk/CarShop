@@ -6,9 +6,11 @@ namespace CarShop.Models
     {
         public int Id { get; set; }
 
+        public string FullName { get; set; }
+
         public Make Make { get; set; }
 
-        public ModelOfCar Model { get; set; }
+        public Model Model { get; set; }
 
         public int Odometer { get; set; }
 
