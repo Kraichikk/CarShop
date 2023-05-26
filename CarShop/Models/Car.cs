@@ -6,6 +6,11 @@ namespace CarShop.Models
     {
         public int Id { get; set; }
 
+        public string FullName
+        {
+            get { return Make.NameOfMake.ToString() + " " + Model.NameOfModel.ToString() + " " + Year.ToString(); }
+        }
+
         public Make Make { get; set; }
 
         public ModelOfCar Model { get; set; }
@@ -21,6 +26,12 @@ namespace CarShop.Models
         public InteriorOfCar InteriorOfCar { get; set; } //enum
 
         public WheelDriwe WheelDriwe { get; set; } //enum
+
+        public bool IsFavourite { get; set; }
+
+        public bool Available { get; set; }
+
+        public int MakeId { get; set; }
 
         private int year;
         public DateTime Year
