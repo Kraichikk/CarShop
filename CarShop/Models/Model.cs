@@ -8,6 +8,8 @@ namespace CarShop.Models
 
         public string Name { get; set; }
 
+        public int MakeId { get; set; }
+
         public Make Make { get; set; }
 
         public string Img { get; set; }

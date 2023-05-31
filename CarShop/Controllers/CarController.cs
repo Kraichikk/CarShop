@@ -10,6 +10,7 @@ namespace CarShop.Controllers
 
         public CarController(CarShopDbContext dbContext)
         {
+            
             _dbContext = dbContext;
         }
         public IActionResult Index()
@@ -20,29 +21,20 @@ namespace CarShop.Controllers
 
         public IActionResult Create()
         {
-            // Отримати список марок для випадаючого списку
-            List<Make> makes = _dbContext.Makes.ToList();
-            ViewBag.Makes = makes;
-
             return View();
         }
 
+        // POST: /Car/Create
         [HttpPost]
-        public IActionResult Create(Car car)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Car car)
         {
             if (ModelState.IsValid)
             {
-                // Створити поле FullName
-                car.FullName = car.Make.Name + " " + car.Model.Name + " " + car.Year;
-
-                _dbContext.Cars.Add(car);
-                _dbContext.SaveChanges();
-                return RedirectToAction("Index");
+                _dbContext.Add(car);
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction("Index", "Car");
             }
-
-            // Отримати список марок для випадаючого списку
-            List<Make> makes = _dbContext.Makes.ToList();
-            ViewBag.Makes = makes;
 
             return View(car);
         }

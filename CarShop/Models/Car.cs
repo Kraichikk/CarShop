@@ -6,13 +6,30 @@ namespace CarShop.Models
     {
         public int Id { get; set; }
 
-        public string FullName { get; set; }
+        public string FullName
+        {
+            get { return Make.Name.ToString() + " " + Model.Name.ToString() + " " + Year.ToString(); }
+        }
+
+        public int MakeId { get; set; }
 
         public Make Make { get; set; }
+
+        public int ModelId { get; set; }
 
         public Model Model { get; set; }
 
         public int Odometer { get; set; }
+
+        public int EngineDisplacement { get; set; }
+
+        public string Img { get; set; }
+
+        public string Vin { get; set; }
+
+        public Color Color { get; set; } // enum
+
+        public BodyType BodyType { get; set; } // enum
 
         public Transmission Transmission { get; set; } //enum
 
